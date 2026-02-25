@@ -1,12 +1,16 @@
 # AP Switcher
 
-A macOS menu bar utility that monitors WiFi signal strength and automatically roams between access points on the same network. Designed for homes and offices with multiple APs (mesh networks, multiple routers, etc.) where macOS doesn't always pick the strongest one.
+A macOS menu bar utility that monitors WiFi signal strength and automatically roams (switches between) access points on the same network.
+
+iOS devices like iPhones and iPads are designed for mobility — they roam aggressively, constantly seeking out the strongest access point as you move around. MacBooks take the opposite approach. macOS prioritizes connection stability over signal strength, so it tends to hold onto the current AP even when a much stronger one is available nearby. This means your MacBook can sit with a weak, distant AP while a strong one is right next to you.
+
+AP Switcher fixes this by continuously monitoring signal quality across all access points on your network and automatically switching when a significantly better option is available. It gives your Mac the roaming intelligence that Apple built into iOS but left out of macOS — configurable, visible, and under your control from the menu bar.
 
 ## Screenshots
 
 <p align="center">
   <img src="image1.jpg" width="300" alt="Main view showing signal monitoring and access point list" />
-  &nbsp;&nbsp;&nbsp;
+  <br/><br/>
   <img src="image2.jpg" width="300" alt="Settings panel with roaming thresholds and scan configuration" />
 </p>
 
