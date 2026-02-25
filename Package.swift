@@ -9,7 +9,7 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "APSwitcher",
-            path: "Sources/WiFiGuard"
+            path: "Sources/APSwitcher"
         )
     ]
 )

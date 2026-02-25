@@ -80,13 +80,13 @@ All settings — roam threshold, poll interval, scan interval, weak signal thres
 ```
 ap-switcher/
 ├── Package.swift
-├── WiFiGuard.entitlements
+├── APSwitcher.entitlements
 ├── scripts/
 │   ├── build-and-install.sh
 │   └── generate-icon.swift
-└── Sources/WiFiGuard/
+└── Sources/APSwitcher/
     ├── main.swift              # Entry point
-    ├── WiFiGuardApp.swift      # App delegate, menu bar, popover
+    ├── APSwitcherApp.swift     # App delegate, menu bar, popover
     ├── WiFiMonitor.swift       # Core WiFi monitoring and roaming logic
     ├── MenuBarView.swift       # SwiftUI interface
     ├── LocationManager.swift   # Location permission handling

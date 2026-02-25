@@ -2,7 +2,7 @@
 .build/
 build/
 DerivedData/
-WiFiGuard.app/
+AP Switcher.app/
 
 # Xcode
 *.xcuserstate
