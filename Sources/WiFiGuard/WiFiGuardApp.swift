@@ -111,6 +111,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate, CLLocationManagerDeleg
         } else {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             NSApp.activate(ignoringOtherApps: true)
+            DispatchQueue.main.async { [weak self] in
+                self?.pinPopoverBelowMenuBar()
+            }
+        }
+    }
+
+    private func pinPopoverBelowMenuBar() {
+        guard let popoverWindow = popover.contentViewController?.view.window,
+              let screen = popoverWindow.screen ?? NSScreen.main else { return }
+
+        let frame = popoverWindow.frame
+        let ceiling = screen.visibleFrame.maxY
+
+        if frame.maxY > ceiling + 15 {
+            let y = max(screen.visibleFrame.minY, ceiling - frame.height)
+            popoverWindow.setFrameOrigin(NSPoint(x: frame.origin.x, y: y))
         }
     }
 }
