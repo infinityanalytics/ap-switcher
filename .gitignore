@@ -1,0 +1,24 @@
+# Build artifacts
+.build/
+build/
+DerivedData/
+WiFiGuard.app/
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.swiftpm/xcode/
+*.xcodeproj/project.xcworkspace/
+
+# macOS
+.DS_Store
+._*
+
+# Environment / secrets
+.env
+.env.*
+
+# Editor
+*.swp
+*~
