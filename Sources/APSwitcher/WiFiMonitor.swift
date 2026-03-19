@@ -338,7 +338,6 @@ class WiFiMonitor: ObservableObject {
             }
         }
         
-        // Record signal history
         let sample = SignalSample(date: Date(), rssi: rssi, noise: noise)
         signalHistory.append(sample)
         if signalHistory.count > maxHistorySamples {

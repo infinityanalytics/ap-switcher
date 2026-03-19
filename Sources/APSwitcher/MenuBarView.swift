@@ -363,13 +363,20 @@ struct SignalHistoryGraph: View {
                     
                     ForEach(Array(displaySamples.enumerated()), id: \.element.id) { index, sample in
                         let x = w - CGFloat(displaySamples.count - index) * (barWidth + 1)
-                        let barH = (Double(sample.rssi) - minDBm) / (maxDBm - minDBm) * Double(h)
-                        let clampedH = max(1, min(barH, Double(h)))
                         
-                        RoundedRectangle(cornerRadius: 1)
-                            .fill(barColor(for: sample.rssi))
-                            .frame(width: barWidth, height: CGFloat(clampedH))
-                            .position(x: x + barWidth / 2, y: h - CGFloat(clampedH) / 2)
+                        if sample.rssi >= 0 {
+                            RoundedRectangle(cornerRadius: 1)
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: barWidth, height: 1)
+                                .position(x: x + barWidth / 2, y: h - 0.5)
+                        } else {
+                            let barH = (Double(sample.rssi) - minDBm) / (maxDBm - minDBm) * Double(h)
+                            let clampedH = max(1, min(barH, Double(h)))
+                            RoundedRectangle(cornerRadius: 1)
+                                .fill(barColor(for: sample.rssi))
+                                .frame(width: barWidth, height: CGFloat(clampedH))
+                                .position(x: x + barWidth / 2, y: h - CGFloat(clampedH) / 2)
+                        }
                     }
                 }
             }
